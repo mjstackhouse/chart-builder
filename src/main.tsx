@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { EnsureKontentAsParent } from "./customElement/EnsureKontentAsParent";
 import { CustomElementContext } from './customElement/CustomElementContext';
@@ -15,26 +15,6 @@ import ChartPreview from './routes/chart-preview';
 import LineChartInputs from './routes/line-chart/line-chart-inputs';
 import LineChartConfigure from './routes/line-chart/line-chart-configure';
 import ErrorBoundary from './error-boundary';
-
-export const WizardContext = React.createContext<any>(null);
-
-// const [userSelections, setUserSelections] = useState(
-//   {
-//     type: '',
-//     dataLabelsNum: null,
-//     datasetsNum: null,
-//     dataLabels: [],
-//     dataLabel: '',
-//     data: {
-//       datasets: []
-//     },
-//     dataColors: {},
-//     chartTitle: '',
-//     xAxisTitle: '',
-//     yAxisTitle: '',
-//     yAxisIncrement: null,
-//   }
-// );
 
 const router = createBrowserRouter([
   {
