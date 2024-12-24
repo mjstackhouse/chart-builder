@@ -62,7 +62,6 @@ html {
   background-color: theme('colors.darker-red');
 }
 
-
 input:focus {
   border-color: theme('colors.orange');
 }
