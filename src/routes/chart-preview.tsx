@@ -4,14 +4,12 @@ import { Chart } from "chart.js";
 import { useEffect } from "react";
 import { useUserSelections, useValue } from '../customElement/CustomElementContext';
 import { Value } from "../customElement/value";
-import { useSearchParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function ChartPreview() {
   const navigate = useNavigate();
-  const [selections, setSelections] = useUserSelections();
-  const [elementValue, setElementValue] = useValue();
-  const [searchParams] = useSearchParams();
-  const searchParamsArray = Array.from(searchParams.entries());
+  const [selections] = useUserSelections();
+  const [_, setElementValue] = useValue();
 
   let chart: Chart<'bar', string[] | undefined, string> | Chart<'pie', string[] | undefined, string> | undefined | Chart<'line', string[] | undefined, string> | undefined;
   let chartData: Value = { valueKey: '', userSelections: '' };
@@ -187,7 +185,6 @@ export default function ChartPreview() {
   function setCustomElementValue() {
     if (document !== null) {
       const chart = document.getElementById('chart') as HTMLCanvasElement;
-      // chartData = { valueKey: chart.toDataURL('image/webp', 1), searchParams: `${location.pathname.replace('preview', 'configure')}?${searchParamsArray.map((param) => `${param[0]}=${encodeURIComponent(param[1])}`).join('&')}` };
       chartData = { valueKey: chart.toDataURL('image/webp', 1), userSelections: JSON.stringify(selections) };
 
       if (chart !== null) {

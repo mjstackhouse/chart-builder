@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { FormEvent, useEffect, useRef, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { Dataset, useUserSelections } from '../../customElement/CustomElementContext';
 import BackToTypeSelectionWarning from "../../warnings/back-to-type-selection-warning";
 
@@ -7,8 +7,6 @@ export default function LineChartConfigure() {
   const navigate = useNavigate();
   const [selections, setSelections] = useUserSelections();
   const [submitBtnDisabled, setSubmitBtnDisabled] = useState(false);
-  // const dataLabelsNum = useRef<string | number>(selections?.dataLabelsNum ? selections.dataLabelsNum : '');
-  // const datasetsNum = useRef<string | number>(selections?.datasetsNum ? selections.datasetsNum : '');
   const [dataLabelsNum, setDataLabelsNum] = useState<string | number>(selections?.dataLabelsNum ? selections.dataLabelsNum : '');
   const [datasetsNum, setDatasetsNum] = useState<string | number>(selections?.datasetsNum ? selections.datasetsNum : '');
 
@@ -103,20 +101,18 @@ export default function LineChartConfigure() {
     }
   }
   useEffect(() => {
-    console.log('userSelections: ', selections);
     const submitBtn = document.getElementById('submit-btn');
 
-    // if (selections?.dataLabels) {
-      if (selections?.chartTitle === '' || selections?.dataLabelsNum === '' || selections?.datasetsNum === '' || selections?.xAxisTitle === '' || selections?.yAxisTitle === '' || selections?.yAxisIncrement === '') {
-        if (submitBtn !== null) {
-          setSubmitBtnDisabled(true);
-        } 
+    if (selections?.chartTitle === '' || selections?.dataLabelsNum === '' || selections?.datasetsNum === '' || selections?.xAxisTitle === '' || selections?.yAxisTitle === '' || selections?.yAxisIncrement === '') {
+      if (submitBtn !== null) {
+        setSubmitBtnDisabled(true);
+      } 
+    }
+    else {
+      if (submitBtn !== null) {
+        setSubmitBtnDisabled(false);
       }
-      else {
-        if (submitBtn !== null) {
-          setSubmitBtnDisabled(false);
-        }
-      }
+    }
 
     handleClick('useEffect');
   }, [selections]);

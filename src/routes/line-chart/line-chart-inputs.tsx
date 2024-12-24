@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FormEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Dataset, useUserSelections } from "../../customElement/CustomElementContext";
+import { useUserSelections } from "../../customElement/CustomElementContext";
 
 export default function LineChartInputs() {
   const navigate = useNavigate();
