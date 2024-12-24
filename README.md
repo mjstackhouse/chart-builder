@@ -27,7 +27,7 @@ This custom element saves the user's chart as a data URI in the 'valueKey' prope
       {
         "type": "pie",
         "chartTitle": "People's Favorite RGB Color",
-        "dataLabels":["Number of Votes for Red","Number of Votes for Green","Number of Votes for Blue"]}",
+        "dataLabels":["Number of Votes for Red","Number of Votes for Green","Number of Votes for Blue"]",
         "dataLabelsNum":"3",
         "datasetsNum":"1",
         "datasets":
@@ -40,6 +40,7 @@ This custom element saves the user's chart as a data URI in the 'valueKey' prope
                            }
             }
           ]
+      }
   }
   ```
 
