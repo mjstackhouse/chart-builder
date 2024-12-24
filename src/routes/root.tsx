@@ -1,4 +1,4 @@
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate, useSearchParams } from "react-router-dom";
 import { useIsDisabled, useValue } from '../customElement/CustomElementContext';
 import { useEffect } from "react";
 
@@ -8,7 +8,9 @@ export default function Root() {
   const [elementValue] = useValue();
 
   useEffect(() => {
-    if (isDisabled === false) {
+    const pathname = window.location.pathname;
+
+    if (isDisabled === false && pathname === '/') {
       navigate('/home');
     }
   })
