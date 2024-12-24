@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px !important;
+}
+
+.btn {
+  border-radius: 9999px;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-kerning: auto;
+  font-size: 12px !important;
+  height: 40px;
+  line-height: 18px;
+  letter-spacing: 0.825852px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0 22px;
+}
+
+.back-btn {
+  border-color: theme('colors.purple');
+  border-style: solid;
+  border-width: 2px;
+  background-color: white;
+  color: theme('colors.lighter-black');
+}
+
+.back-btn:hover {
+  background-color: theme('colors.lighter-purple');
+}
+
+.continue-btn {
+  background-color: theme('colors.purple');
+  color: white;
+}
+
+.continue-btn:disabled, .continue-btn:disabled:hover {
+  color: rgb(226 232 240);
+  background-color: rgb(100 116 139);
+}
+
+.continue-btn:hover, .continue-btn:hover:enabled {
+  color: white;
+  background-color: theme('colors.darker-purple');
+}
+
+.warning-btn {
+  color: white;
+  background-color: theme('colors.red');
+}
+
+.warning-btn:hover {
+  color: white;
+  background-color: theme('colors.darker-red');
+}
+
+
+input:focus {
+  border-color: theme('colors.orange');
+}
+
+h1 {
+  font-size: 2rem;
+}
