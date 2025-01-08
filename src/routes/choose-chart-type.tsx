@@ -8,7 +8,6 @@ export default function ChooseChartType() {
   function handleNavigate(type: string) {
     if (type !== selections?.type) setSelections({type: type});
     else setSelections({...selections, type: type});
-    // setSelections({...selections, type: type});
     navigate(`/type/${type}/configure`);
   }
 

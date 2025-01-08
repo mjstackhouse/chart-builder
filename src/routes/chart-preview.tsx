@@ -17,23 +17,24 @@ export default function ChartPreview() {
   useEffect(() => {
     const ctx = document.getElementById('chart') as HTMLCanvasElement;
 
-    if (selections?.type === 'pie') {
-      let datasets = selections!.datasets;
+    let datasets = selections!.datasets;
 
-      if (datasets) {
-        datasets.forEach((dataset) => {
-          if (dataset.data) {
-            dataset.data.forEach((value, index2) => {
-              if (value === '' || value === null || value === undefined) {
-                if (dataset.data) {
-                  dataset.data[index2] = 'NaN';
-                }
+    // Proccessing data to properly 'skip' empty data values in the chart
+    if (datasets) {
+      datasets.forEach((dataset) => {
+        if (dataset.data) {
+          dataset.data.forEach((value, index2) => {
+            if (value === '' || value === null || value === undefined) {
+              if (dataset.data) {
+                dataset.data[index2] = 'NaN';
               }
-            })
-          }
-        })
-      }
+            }
+          })
+        }
+      })
+    }
 
+    if (selections?.type === 'pie') {
       chart = new Chart(ctx, {
         type: 'pie',
         data: {
@@ -62,22 +63,6 @@ export default function ChartPreview() {
       });
     }
     else if (selections?.type === 'bar') {
-      let datasets = selections!.datasets;
-
-      if (datasets) {
-        datasets.forEach((dataset) => {
-          if (dataset.data) {
-            dataset.data.forEach((value, index2) => {
-              if (value === '' || value === null || value === undefined) {
-                if (dataset.data) {
-                  dataset.data[index2] = 'NaN';
-                }
-              }
-            })
-          }
-        })
-      }
-
       chart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -124,22 +109,6 @@ export default function ChartPreview() {
       });
     }
     else if (selections?.type === 'line') {
-      let datasets = selections!.datasets;
-
-      if (datasets) {
-        datasets.forEach((dataset) => {
-          if (dataset.data) {
-            dataset.data.forEach((value, index2) => {
-              if (value === '' || value === null || value === undefined) {
-                if (dataset.data) {
-                  dataset.data[index2] = 'NaN';
-                }
-              }
-            })
-          }
-        })
-      }
-      
       chart = new Chart(ctx, {
         type: 'line',
         data: {

@@ -12,6 +12,8 @@ Netlify has made this easy. If you click the deploy button below, it will guide 
 
 ## Configuring the Custom Element
 
+For the hosted code URL, be sure to use the '/home' route, since the '/' route is being used by the 'root' component.
+
 This custom element requires no parameters, so only the following is necessary:
 
 `{}`
@@ -44,4 +46,4 @@ This custom element saves the user's chart as a data URI in the 'valueKey' prope
   }
   ```
 
-The 'valueKey' value will need to be parsed, and then it can be used to set the 'src' attribute of an `<img>` tag. If you're interested in the interactivity that Chart.js provides as opposed to the static image of the chart, then the 'userSelections' values can be used in your front-end with Chart.js to create the chart.
+The 'valueKey' value will need to be parsed, and then it can be used to set the 'src' attribute of an `<img>` tag. If you're interested in the interactivity that Chart.js provides, as opposed to the static image of the chart, then the 'userSelections' values can be used in your front-end with Chart.js to create the chart, as shown in the 'chart-preview' component.
