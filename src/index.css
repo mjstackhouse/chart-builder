@@ -69,3 +69,18 @@ input:focus {
 h1 {
   font-size: 2rem;
 }
+
+/* Animation code from: https://www.w3schools.com/howto/howto_css_loader.asp */
+#loading-span {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid theme('colors.orange');
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

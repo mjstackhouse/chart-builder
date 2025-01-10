@@ -32,7 +32,9 @@ export default function Home() {
           <div className='flex flex-wrap h-[500px] w-full'>
             <div className='basis-full flex flex-wrap justify-around mb-8'>
               <h1 className='basis-full font-bold'>Existing Chart Preview</h1>
-              <img src={elementValue?.valueKey} />
+              <div className='basis-full flex justify-around items-center h-[500px]'>
+                <img className='max-h-[500px] max-w-full' src={elementValue?.valueKey} />
+              </div>
             </div>
             <div className='justify-self-end basis-full flex justify-between'>
               <button onClick={() => {handleClick('click')}} className='btn back-btn'>Create new chart</button>

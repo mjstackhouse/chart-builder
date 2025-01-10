@@ -135,7 +135,7 @@ export default function ChartInputs() {
           </div>
           <div className='justify-self-end basis-full flex place-items-end justify-between'>
             <Link to={'../configure'} draggable={false} relative='path' className='btn back-btn'>
-              Go back to chart configuration
+              Go back to configuration
             </Link>
             <button id='submit-btn' type='submit' disabled={submitBtnDisabled} className='btn continue-btn'>
               Continue to preview

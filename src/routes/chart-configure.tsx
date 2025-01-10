@@ -177,7 +177,7 @@ export default function ChartConfigure() {
               Go back to type selection
             </button>
             <button id='submit-btn' type='submit' className='btn continue-btn' disabled={submitBtnDisabled}>
-              Continue to data inputs
+              Continue to inputs
             </button>
           </div>
         </form>

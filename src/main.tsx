@@ -1,6 +1,5 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { EnsureKontentAsParent } from "./customElement/EnsureKontentAsParent";
+import { EnsureKontentAsParent } from './customElement/EnsureKontentAsParent';
 import { CustomElementContext } from './customElement/CustomElementContext';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Root from './routes/root';
@@ -51,11 +50,9 @@ if (!rootElement) {
 const root = ReactDOM.createRoot(rootElement);
 
 root.render(
-  <React.StrictMode>
-    <EnsureKontentAsParent>
-      <CustomElementContext height={600}>
-        <RouterProvider router={router} />
-      </CustomElementContext>
-    </EnsureKontentAsParent>
-  </React.StrictMode>
+  <EnsureKontentAsParent>
+    <CustomElementContext height={600}>
+      <RouterProvider router={router} />
+    </CustomElementContext>
+  </EnsureKontentAsParent>
 );
