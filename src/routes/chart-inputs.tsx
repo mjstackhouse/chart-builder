@@ -99,7 +99,7 @@ export default function ChartInputs() {
                   </div>
                   {[...Array(Number(selections?.datasetsNum))].map((_, index2) => (
                     <div className='basis-full flex flex-wrap mb-3' key={`dataset-${index2 + 1}-category-${index + 1}-container`}>
-                      <label htmlFor={`dataset-${index2 + 1}-category-${index + 1}-value`} className='pr-2 basis-full mb-1.5'>Dataset {index2 + 1} Value</label>
+                      <label htmlFor={`dataset-${index2 + 1}-category-${index + 1}-value`} className='pr-2 basis-full mb-1.5'>Dataset {index2 + 1} value</label>
                       <input type='number' min={0} id={`dataset-${index2 + 1}-category-${index + 1}-value`} name={`dataset-${index2 + 1}-category-${index + 1}-value`} value={ selections?.datasets?.[index2]?.data?.[index] ? selections.datasets[index2].data[index] : '' } onChange={(e) => handleChange('data', e.target.value, index2, index)} />
                     </div>
                   ))}
