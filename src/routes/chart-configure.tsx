@@ -132,30 +132,33 @@ export default function ChartConfigure() {
 
   return (
     <div className='flex flex-wrap h-[600px]'>
-      <div className='basis-full flex'>
-        <form className='basis-full flex flex-wrap' onSubmit={handleSubmit}>
-          <div className='basis-full items-center'>
+      <div className='basis-full flex flex-wrap place-content-start'>
+        <div className='basis-full flex place-self-start place-items-center'>
+          <p className='chart-type-label basis-full'>{selections?.type?.toUpperCase()} CHART</p>
+        </div>
+        <form className='basis-full flex flex-wrap place-self-start place-content-between' onSubmit={handleSubmit}>
+          <div className='basis-full items-center h-[525px]'>
             <div className='basis-full flex flex-wrap items-center mb-6'>
-              <label htmlFor='title' className='pr-2 basis-full mb-1.5'>Chart Title</label>
-              <input type='text' id='title' name='title' value={selections?.chartTitle ? selections.chartTitle : ''} onChange={(e) => setSelections({...selections, chartTitle: e.target.value})} className='basis-full rounded-full border-black border-solid border-2 px-2 py-[0.25rem]' required/>
+              <label htmlFor='title' className='pt-3 pr-2 basis-full mb-1.5'>Chart Title</label>
+              <input type='text' id='title' name='title' value={selections?.chartTitle ? selections.chartTitle : ''} onChange={(e) => setSelections({...selections, chartTitle: e.target.value})} required/>
             </div>
             {
-              selections?.type === 'bar' || selections?.type === 'line' ? 
+              selections?.type === 'bar' || selections?.type === 'line' ?
               <div className='basis-full flex flex-wrap items-center mb-6'>
                 <label htmlFor='x-axis-title' className='pr-2 basis-full mb-1.5'>X-Axis Title</label>
-                <input type='text' id='x-axis-title' name='x-axis-title' value={selections?.xAxisTitle ? selections.xAxisTitle : ''} onChange={(e) => setSelections({...selections, xAxisTitle: e.target.value})} className='basis-full rounded-full border-black border-solid border-2 px-2 py-[0.25rem]' required/>
+                <input type='text' id='x-axis-title' name='x-axis-title' value={selections?.xAxisTitle ? selections.xAxisTitle : ''} onChange={(e) => setSelections({...selections, xAxisTitle: e.target.value})} required/>
               </div>
               : <></>
             }
             <div className='basis-full flex flex-wrap items-center mb-6'>
               <label htmlFor='data-labels-num' className='pr-2 basis-full mb-1.5'>{selections?.type === 'bar' || selections?.type === 'line' ? 'Number of X-Axis Labels' : 'Number of Data Values'}</label>
-              <input type='number' min={1} id='data-labels-num' name='data-labels-num' value={dataLabelsNum} onChange={(e) => setDataLabelsNum(e.target.value) } className='basis-full rounded-full border-black border-solid border-2 px-2 py-[0.25rem]' required/>
+              <input type='number' min={1} id='data-labels-num' name='data-labels-num' value={dataLabelsNum} onChange={(e) => setDataLabelsNum(e.target.value) } required/>
             </div>
             {
               selections?.type === 'bar' || selections?.type === 'line' ? 
               <div className='basis-full flex flex-wrap items-center mb-6'>
                 <label htmlFor='y-axis-title' className='pr-2 basis-full mb-1.5'>Y-Axis Title</label>
-                <input type='text' id='y-axis-title' name='y-axis-title' value={selections?.yAxisTitle ? selections.yAxisTitle : ''} onChange={(e) => setSelections({...selections, yAxisTitle: e.target.value})} className='basis-full rounded-full border-black border-solid border-2 px-2 py-[0.25rem]' required/>
+                <input type='text' id='y-axis-title' name='y-axis-title' value={selections?.yAxisTitle ? selections.yAxisTitle : ''} onChange={(e) => setSelections({...selections, yAxisTitle: e.target.value})} required/>
               </div>
               : <></>
             }
@@ -163,16 +166,16 @@ export default function ChartConfigure() {
               selections?.type === 'bar' || selections?.type === 'line' ? 
               <div className='basis-full flex flex-wrap items-center mb-6'>
                 <label htmlFor='y-axis-increment' className='pr-2 basis-full mb-1.5'>Y-Axis Increment</label>
-                <input type='number' min={1} id='y-axis-increment' name='y-axis-increment' value={selections?.yAxisIncrement ? selections.yAxisIncrement : ''} onChange={(e) => { setSelections({...selections, yAxisIncrement: e.target.value})}} className='basis-full rounded-full border-black border-solid border-2 px-2 py-[0.25rem]' required/>
+                <input type='number' min={1} id='y-axis-increment' name='y-axis-increment' value={selections?.yAxisIncrement ? selections.yAxisIncrement : ''} onChange={(e) => { setSelections({...selections, yAxisIncrement: e.target.value})}} required/>
               </div>
               : <></>
             }
             <div className='basis-full flex flex-wrap items-center mb-6'>
               <label htmlFor='datasets-num' className='pr-2 basis-full mb-1.5'>Number of Datasets</label>
-              <input type='number' min={1} id='datasets-num' name='datasets-num' value={datasetsNum} onChange={(e) => setDatasetsNum(e.target.value) } className='basis-full rounded-full border-black border-solid border-2 px-2 py-[0.25rem]' required/>
+              <input type='number' min={1} id='datasets-num' name='datasets-num' value={datasetsNum} onChange={(e) => setDatasetsNum(e.target.value) } required/>
             </div>
           </div>
-          <div className='justify-self-end basis-full flex place-items-end justify-between'>
+          <div className='justify-self-end basis-full h-[40px] flex place-self-end place-items-end justify-between'>
             <button className='btn back-btn' type='button' onClick={() => {handleClick('click')}}>
               Go back to type selection
             </button>

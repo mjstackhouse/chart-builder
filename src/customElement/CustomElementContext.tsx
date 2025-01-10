@@ -40,12 +40,6 @@ export type UserSelections = {
   yAxisIncrement?: number | string
 } | null;
 
-// export type ChartSelections = {
-//   bar?: UserSelections,
-//   line?: UserSelections,
-//   pie?: UserSelections
-// }
-
 type CustomElementContext = Readonly<{
   config: Config;
   value: Value | null;
@@ -98,7 +92,6 @@ export const CustomElementContext = (props: CustomElementContextProps) => {
       variant,
       userSelections,
       setUserSelections: (newSelections: UserSelections | null) => {
-        // CustomElement.setUserSelections(newSelections);
         setUserSelections(newSelections);
       }
     };

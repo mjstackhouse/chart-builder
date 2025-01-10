@@ -5,7 +5,6 @@ import { useEffect } from "react";
 
 export default function Home() {
   const [elementValue] = useValue();
-
   let parsedElementValue;
 
   if (elementValue?.userSelections !== null && elementValue?.userSelections !== undefined) parsedElementValue = JSON.parse(elementValue?.userSelections as string);
