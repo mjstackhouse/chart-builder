@@ -151,13 +151,13 @@ export default function ChartConfigure() {
               : <></>
             }
             <div className='basis-full flex flex-wrap items-center mb-6'>
-              <label htmlFor='data-labels-num' className='pr-2 basis-full mb-1.5'>{selections?.type === 'bar' || selections?.type === 'line' ? 'Number of x-Axis labels' : 'Number of data values'}</label>
+              <label htmlFor='data-labels-num' className='pr-2 basis-full mb-1.5'>{selections?.type === 'bar' || selections?.type === 'line' ? 'Number of x-axis labels' : 'Number of data values'}</label>
               <input type='number' min={1} id='data-labels-num' name='data-labels-num' value={dataLabelsNum} onChange={(e) => setDataLabelsNum(e.target.value) } required/>
             </div>
             {
               selections?.type === 'bar' || selections?.type === 'line' ? 
               <div className='basis-full flex flex-wrap items-center mb-6'>
-                <label htmlFor='y-axis-title' className='pr-2 basis-full mb-1.5'>Y-Axis title</label>
+                <label htmlFor='y-axis-title' className='pr-2 basis-full mb-1.5'>Y-axis title</label>
                 <input type='text' id='y-axis-title' name='y-axis-title' value={selections?.yAxisTitle ? selections.yAxisTitle : ''} onChange={(e) => setSelections({...selections, yAxisTitle: e.target.value})} required/>
               </div>
               : <></>
@@ -165,7 +165,7 @@ export default function ChartConfigure() {
             {
               selections?.type === 'bar' || selections?.type === 'line' ? 
               <div className='basis-full flex flex-wrap items-center mb-6'>
-                <label htmlFor='y-axis-increment' className='pr-2 basis-full mb-1.5'>Y-Axis increment</label>
+                <label htmlFor='y-axis-increment' className='pr-2 basis-full mb-1.5'>Y-axis increment</label>
                 <input type='number' min={1} id='y-axis-increment' name='y-axis-increment' value={selections?.yAxisIncrement ? selections.yAxisIncrement : ''} onChange={(e) => { setSelections({...selections, yAxisIncrement: e.target.value})}} required/>
               </div>
               : <></>
