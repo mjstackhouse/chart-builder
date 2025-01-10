@@ -12,8 +12,6 @@ Netlify has made this easy. If you click the deploy button below, it will guide 
 
 ## Configuring the Custom Element
 
-For the hosted code URL, be sure to use the '/home' route, since the '/' route is being used by the 'root' component.
-
 This custom element requires no parameters, so only the following is necessary:
 
 `{}`
