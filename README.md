@@ -12,9 +12,7 @@ Netlify has made this easy. If you click the deploy button below, it will guide 
 
 ## Configuring the Custom Element
 
-This custom element requires no parameters, so only the following is necessary:
-
-`{}`
+This custom element requires no JSON parameters, so the parameters input can be left empty.
 
 ## What is Saved
 
