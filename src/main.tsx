@@ -44,7 +44,7 @@ const router = createBrowserRouter([
 const rootElement = document.getElementById('root');
 
 if (!rootElement) {
-  throw new Error('Cannot find the root element. Please, check your html.');
+  throw new Error('Cannot find the root element. Please check your HTML.');
 }
 
 const root = ReactDOM.createRoot(rootElement);
